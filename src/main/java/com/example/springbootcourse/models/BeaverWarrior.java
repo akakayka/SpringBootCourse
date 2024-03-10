@@ -2,23 +2,20 @@ package com.example.springbootcourse.models;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 @Component("warrior")
+@Slf4j
 public class BeaverWarrior implements Beaver {
-
-    @Override
-    public void work() {
-        System.out.println("Защищаю плотину");
-    }
 
     @PostConstruct
     public void construct() {
-        System.out.println("Бобр-воин был создан");
+        log.info("Бобр-воин был создан");
     }
 
     @PreDestroy
     public void destroy() {
-        System.out.println("Бобр-воин был уничтожен");
+        log.info("Бобр-воин был уничтожен");
     }
 }

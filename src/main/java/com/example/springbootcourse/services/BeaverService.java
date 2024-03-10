@@ -3,16 +3,17 @@ package com.example.springbootcourse.services;
 import com.example.springbootcourse.models.Beaver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Configuration;
 
-@Configuration
+import org.springframework.stereotype.Service;
+
+@Service
 public class BeaverService {
 
     private Beaver setterBuilder;
     private Beaver setterWarrior;
 
-    private Beaver constructBuilder;
-    private Beaver constructWarrior;
+    private final Beaver constructBuilder;
+    private final Beaver constructWarrior;
 
     @Autowired
     @Qualifier("builder")
